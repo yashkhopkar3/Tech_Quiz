@@ -1,0 +1,5 @@
+Visual studio
+Android Studio
+Selenium
+Jira
+jira

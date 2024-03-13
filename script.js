@@ -9,7 +9,6 @@ let backgroundMusic = new Audio('Background_Music.mp3');
 
 // Play background music when the page loads
 function bgmusic() {
-  let backgroundMusic = new Audio('Background_Music.mp3');
   backgroundMusic.loop = true; // Loop the background music
   backgroundMusic.play();
 };

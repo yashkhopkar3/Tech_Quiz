@@ -7,10 +7,17 @@
     <title>Tech Quiz</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script>
+      $(document).ready(function(){
+        bgmusic();
+      });
+
+    </script>
 </head>
 
-<body onload="bgmusic()">
+<body>
   <div class="icon-container" title="Home">
     <i class="fas fa-home" id="home-icon" onclick="goToHome()"></i>
     <span class="icon-name">Home</span>

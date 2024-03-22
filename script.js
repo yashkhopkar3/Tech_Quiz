@@ -5,18 +5,19 @@ let score = 0;
 let timeLeft = 30;
 let timerInterval;
 let timerSound = new Audio('Timer_Sound.mp3');
-let backgroundMusic = new Audio('Background_Music.mp3');
-var flag=0;
+var backgroundMusic = new Audio('Background_Music.mp3');
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  bgmusic();
+});
 // Play background music when the page loads
 function bgmusic() {
-  if(flag==0){
-  let backgroundMusic = new Audio('Background_Music.mp3');
-  backgroundMusic.loop = true; // Loop the background music
-  backgroundMusic.play();
-    flag=1;
+  if (backgroundMusic.paused) {
+    backgroundMusic.loop = true; // Loop the background music
+    backgroundMusic.play();
   }
 }
+
 
 function generateRandomIndices() {
   let indices = [];
@@ -28,8 +29,9 @@ function generateRandomIndices() {
 }
 
 function goToHome() {
+
   window.location.reload();
-  backgroundMusic.play();
+ 
 }
 
 function startQuiz(category) {

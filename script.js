@@ -6,12 +6,16 @@ let timeLeft = 30;
 let timerInterval;
 let timerSound = new Audio('Timer_Sound.mp3');
 let backgroundMusic = new Audio('Background_Music.mp3');
+var flag=0;
 
 // Play background music when the page loads
 function bgmusic() {
+  if(flag==0){
   let backgroundMusic = new Audio('Background_Music.mp3');
   backgroundMusic.loop = true; // Loop the background music
   backgroundMusic.play();
+    flag=1;
+  }
 }
 
 function generateRandomIndices() {

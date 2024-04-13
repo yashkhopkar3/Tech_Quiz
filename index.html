@@ -1,73 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Quiz</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
+    <title>Gaming Login</title>
+    <style>
+        body {
+            background: #000;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            width: 300px;
+            padding: 16px;
+            background-color: #f4f4f4;
+            margin: 0 auto;
+            margin-top: 100px;
+            border-radius: 4px;
+            box-shadow: 0px 0px 10px #000;
+        }
+        .login-container h1 {
+            text-align: center;
+            color: #000;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .login-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .login-container input[type="submit"]:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="icon-container" title="Home">
-    <i class="fas fa-home" id="home-icon" onclick="goToHome()"></i>
-    <span class="icon-name">Home</span>
-  </div>
-  <div class="icon-container" title="History">
-    <i class="fas fa-history" id="history-icon" onclick="checkHistory()"></i>
-    <span class="icon-name">History</span>
-  </div>
-  <div class="quiz-container">
-    <h1>Tech Quiz</h1>
-    <br>
-    <div id="category-container">
-      <div class="row">
-        <div class="category-button" onclick="startQuiz('Guess_the_Programming_Language')">
-          <img src="HomePageImages\guess programming.jfif" alt="Programming Language">
-          <span class="category-name">Guess the Programming Language</span>
-        </div>
-        <div class="category-button" onclick="startQuiz('Guess_the_tech_fig')">
-          <img src="HomePageImages\tech fig.jfif" alt="Famous Tech Figures">
-          <span class="category-name">Famous Tech Figures</span>
-        </div>
-        <div class="category-button" onclick="startQuiz('Guess_Internet_slang')">
-          <img src="HomePageImages\internet_slag.png" alt="Internet Slang and Jargon">
-          <span class="category-name">Internet Slang and Jargon</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="category-button" onclick="startQuiz('Guess_the_Games')">
-          <img src="HomePageImages\game1.png" alt="Guess_Games">
-          <span class="category-name">Guess Games</span>
-        </div>
-        <div class="category-button" onclick="startQuiz('Guess_developmentTool')">
-          <img src="HomePageImages\Development_tools.png" alt="Development Tools">
-          <span class="category-name">Development Tools</span>
-        </div>
-        <div class="category-button" onclick="startQuiz('Guess_SocialMediaPlatform')">
-          <img src="HomePageImages\social media1.png" alt="Social Media Platforms">
-          <span class="category-name">Social Media Platforms</span>
-        </div>
-      </div>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="login.php" method="post">
+            Username: <input type="text" name="uname" required><br>
+            Password: <input type="password" name="pass" required><br>
+            <input type="submit" value="Login">
+        </form>
     </div>
-
-
-    <div id="question-container">
-      <img id="question-image" alt="Question Image">
-      <p id="question-text"></p>
-      <div id="options-container"></div>
-    </div>
-    <br>
-    <div id="controls-container">
-      <button id="next-button" onclick="nextQuestion()">Next</button>
-      <div id="timer-container">
-        <span id="timer-text">Time Left: <span id="timer">30</span></span>
-      </div>
-    </div>
-  </div>
 </body>
-
 </html>

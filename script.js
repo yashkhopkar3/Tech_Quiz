@@ -18,6 +18,10 @@ function bgmusic() {
   }
 }
 
+function checkHistory() {
+  window.location.href = 'history.php';
+}
+
 
 function generateRandomIndices() {
   let indices = [];
@@ -29,9 +33,7 @@ function generateRandomIndices() {
 }
 
 function goToHome() {
-
-  window.location.reload();
- 
+  window.location.href = 'home.html';
 }
 
 function startQuiz(category) {
@@ -157,6 +159,22 @@ function endQuiz() {
 
   const controlsContainer = document.getElementById("controls-container");
   controlsContainer.innerHTML = '';
+
+  $.ajax({
+    url: 'endQuiz.php',
+    type: 'POST',
+    data: {
+      score: score,
+      category: currentCategory
+    },
+    success: function(data) {
+      console.log(data);
+    },
+    error: function(error) {
+      console.log(error);
+    }
+  });
+  
 }
 
 function imageExists(image_url) {

@@ -2,6 +2,27 @@
 <html lang="en">
 
 <head>
+  <style>
+    #profile {
+      position: fixed;
+      right: 30px;
+      top: 30px;
+      color: #444; 
+      text-align: center; 
+    }
+    #profile .fas.fa-user-circle {
+      font-size: 50px; 
+      color: black; 
+      margin-bottom: 10px;
+    }
+    #profile .username {
+      text-align: right;
+      text-transform: capitalize;
+      font-size: 20px; 
+      font-weight: bold; 
+      color: black; 
+    }
+</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Quiz</title>
@@ -12,18 +33,19 @@
   <script src="script.js"></script>
   <script>
     $(document).ready(function() {
-        $.get("welcome.php", function(data) {
-            $("#welcome-message").html(data);
-            if(data) {
-            alert(data);
-        }
-        });
+       $.get('get_username.php', function(data) {
+        $('.username').text(data);
+      });
     });
 </script>
 </head>
 
 <body>
   <div class="icon-container" title="Home">
+    <div id="profile">
+      <i class='fas fa-user-circle'></i>
+      <div class="username">Username</div>
+    </div>
     <i class="fas fa-home" id="home-icon" onclick="goToHome()"></i> 
 
     <span class="icon-name">Home</span>

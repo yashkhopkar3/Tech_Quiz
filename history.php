@@ -10,48 +10,60 @@
   <script src="script.js"></script>
   <style>
     body {
-      background-color: #000;
+      background-image:url("historybg.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
       color: #fff;
       font-family: 'Courier New', Courier, monospace;
     }
 
+    p{
+      text-align:center;
+      color:black;
+      font-size: 30px;
+      
+    }
+
     table {
-      width: 100%;
+      width: 70%;
       border-collapse: collapse;
       margin-top: 20px;
+      margin:auto;
       color: #fff;
       background-color: #222;
     }
 
     th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
 
-    th {
-      background-color: #4CAF50;
-      color: white;
-    }
+th {
+  background-color: #800080; 
+  color: white;
+}
 
-    tr:nth-child(even) {
-      background-color: #333;
-    }
+tr {
+  background-color: #CCCCFF; 
+  color:black;
+}
 
-    .icon-container {
-      color: #4CAF50;
-      cursor: pointer;
-    }
+.icon-container {
+  color: black; 
+  cursor: pointer;
+  font-size: 22px;
+  padding-left:5%;
+  
+}
+
   </style>
 </head>
 
 <body>
+  <p><b>Score Card<b></p>
   <?php
     session_start();
-    if(isset($_SESSION['username'])) {
-      echo "<p>Welcome, " . $_SESSION['username'] . "!</p>";
-    }
-
     if(!isset($_SESSION['username'])) {
         echo "Please log in first.";
         exit();
@@ -59,8 +71,8 @@
 
     ?>
     <br>
-    <div class="icon-container" title="Home">
-    <i class="fas fa-home" id="home-icon" onclick="goToHome()"></i>
+    <div class="icon-container" title="Home" onclick="goToHome()">
+    <i class="fas fa-home" id="home-icon" ></i>
     <span class="icon-name">Home</span>
   </div>
   <br>

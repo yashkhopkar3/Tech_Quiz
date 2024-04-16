@@ -119,7 +119,7 @@
         $stmt->bind_param("ss", $username, $password);
 
         if($stmt->execute()) {
-            echo "<script type='text/javascript'>alert('Account created successfully.');window.location.href = 'index.html';</script>";
+            echo "<script type='text/javascript'>alert('Account created successfully.');window.location.href = 'index.php';</script>";
         } else {
             echo "Error: " . $stmt->error;
         }

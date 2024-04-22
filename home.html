@@ -41,19 +41,28 @@
 
   <script src="script.js"></script>
   <script>
-    $(document).ready(function() {
-       $.get('get_username.php', function(data) {
+  $(document).ready(function() {
+    $.get('get_username.php', function(data) {
+      if (data === 'not_logged_in') {
+        window.location.href = 'index.php';
+      } else {
         $('.username').text(data);
-      });
+      }
     });
-
+  });
   function myFunction() {
   document.getElementById("logout").style.display = "block";
 }
 
 function logout() {
-  window.location.href = 'index.php';
-}
+    $.ajax({
+      url: 'logout.php',
+      type: 'POST',
+      success: function(){
+        window.location.href = 'index.php';
+      }
+    });
+  }
 </script>
 </head>
 
@@ -116,7 +125,7 @@ function logout() {
     </div>
     <br>
     <div id="controls-container">
-      <button id="next-button" onclick="nextQuestion()">Next</button>
+      <button id="next-button" onclick="nextQuestion()">Skip</button>
       <div id="timer-container">
         <span id="timer-text">Time Left: <span id="timer">30</span></span>
       </div>

@@ -32,6 +32,7 @@ function generateRandomIndices() {
   return indices;
 }
 
+
 function goToHome() {
   window.location.href = 'home.html';
 }
@@ -46,7 +47,7 @@ function startQuiz(category) {
   score = 0;
   document.getElementById("question-image").style.display = "block";
   document.getElementById("category-container").style.display = "none";
-  document.getElementById("next-button").style.display = "block";
+  //document.getElementById("next-button").style.display = "none";
   document.getElementById("home-icon").style.display = "none";
   document.getElementById("history-icon").style.display = "none";
   document.getElementById("timer-text").style.display="block";
@@ -105,6 +106,16 @@ async function displayQuestion() {
       console.error("No valid image extension found.");
     }
   }, 200);
+}
+
+function nextQuestion() {
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < 5) {
+    displayQuestion();
+  } else {
+    endQuiz();
+  }
 }
 
 function checkAnswer(selectedOption, correctAnswer) {
